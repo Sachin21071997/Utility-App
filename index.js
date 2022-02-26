@@ -27,7 +27,7 @@ function convert_to_human_date(epoch){
   return dataObject;
 }
 function componentToHex(c) {
-  var hex = c.toString(16);
+  let hex = c.toString(16);
   return hex.length == 1 ? "0" + hex : hex;
 }
 function rgbToHex(red, green, blue) {
@@ -44,7 +44,7 @@ function HexTorgb(HexToConvert){
   RGBcomponent.green = parseInt(HexToConvert[5]+HexToConvert[6],16);
   console.log(RGBcomponent);
 }
-const cmTometres = cm =>console.log(cm/100); // need to pass parsed input to this (after converting to base 10)
+const cmTometres = cm =>console.log(cm/100); 
 const metresTocm = m =>console.log(m*100);
 const FahToCels = c=>console.log(1.8*c + 32);
 const CelsToFah = f =>console.log((f-32)*0.56);
@@ -62,18 +62,6 @@ const octTodec = oct=>console.log(parseInt(oct,8).toString(10));
 const octTohex = oct=>console.log(parseInt(oct,8).toString(16));
 function thankYou() {
   console.log("Thanks for utilising the App. Hope you liked it.");
-}
-function utilityConverter(wishTocompute){
-  let userInput = readLineSync.question(`Welcome to the Utility App. Which utility function would you like to use\n1. Url Encoder\n2. Url Decoder\n3. Base64 Encoder\n4. Base64 Decoder\n5. String Hashing\n6. Epoch to Human Date Converter\n7. Human Date to Epoch Converter\n8. Binary/Decimal Converter\n9. Binary/Octal Converter\n10.Binary/Hexadecimal Converter\n11.Decimal/Octal Converter\n12.Decimal/Hexadecimal Converter\n13.Octal/Hexadecimal Converter\n14.RGB/Hex Converter\n15.Unit Converters\n`);
-  while(wishTocompute.toUpperCase()=="YES"){
-    driver_function(userInput,wishTocompute);
-    wishTocompute = readLineSync.question(`Do you wish to compute again yes/no\n`);
-    if(wishTocompute.toUpperCase()=="YES"){
-      userInput = readLineSync.question(`Welcome to the Utility App. Which utility function would you like to use\n1. Url Encoder\n2. Url Decoder\n3. Base64 Encoder\n4. Base64 Decoder\n5. String Hashing\n6. Epoch to Human Date Converter\n7. Human Date to Epoch Converter\n8. Binary/Decimal Converter\n9. Binary/Octal Converter\n10.Binary/Hexadecimal Converter\n11.Decimal/Octal Converter\n12.Decimal/Hexadecimal Converter\n13.Octal/Hexadecimal Converter\n14.RGB/Hex Converter\n15.Unit Converters\n`); 
-    }
-    
-  }
-  thankYou();
 }
 function driver_function(userInput,wishTocompute){
   switch(parseInt(userInput,10)){
@@ -258,6 +246,18 @@ function driver_function(userInput,wishTocompute){
       console.log("Incorrect Input, Please try again");
           
   }    
+}
+function utilityConverter(wishTocompute){
+  let userInput = readLineSync.question(`Welcome to the Utility App. Which utility function would you like to use\n1. Url Encoder\n2. Url Decoder\n3. Base64 Encoder\n4. Base64 Decoder\n5. String Hashing\n6. Epoch to Human Date Converter\n7. Human Date to Epoch Converter\n8. Binary/Decimal Converter\n9. Binary/Octal Converter\n10.Binary/Hexadecimal Converter\n11.Decimal/Octal Converter\n12.Decimal/Hexadecimal Converter\n13.Octal/Hexadecimal Converter\n14.RGB/Hex Converter\n15.Unit Converters\n`);
+  while(wishTocompute.toUpperCase()=="YES"){
+    driver_function(userInput,wishTocompute);
+    wishTocompute = readLineSync.question(`Do you wish to compute again yes/no\n`);
+    if(wishTocompute.toUpperCase()=="YES"){
+      userInput = readLineSync.question(`Welcome to the Utility App. Which utility function would you like to use\n1. Url Encoder\n2. Url Decoder\n3. Base64 Encoder\n4. Base64 Decoder\n5. String Hashing\n6. Epoch to Human Date Converter\n7. Human Date to Epoch Converter\n8. Binary/Decimal Converter\n9. Binary/Octal Converter\n10.Binary/Hexadecimal Converter\n11.Decimal/Octal Converter\n12.Decimal/Hexadecimal Converter\n13.Octal/Hexadecimal Converter\n14.RGB/Hex Converter\n15.Unit Converters\n`); 
+    }
+    
+  }
+  thankYou();
 }
 let wishTocompute = "yes";
 utilityConverter(wishTocompute);
