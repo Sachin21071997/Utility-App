@@ -247,7 +247,7 @@ function driver_function(userInput,wishTocompute){
           
   }    
 }
-function utilityConverter(wishTocompute){
+function utility_Converter(wishTocompute){
   let userInput = readLineSync.question(`Welcome to the Utility App. Which utility function would you like to use\n1. Url Encoder\n2. Url Decoder\n3. Base64 Encoder\n4. Base64 Decoder\n5. String Hashing\n6. Epoch to Human Date Converter\n7. Human Date to Epoch Converter\n8. Binary/Decimal Converter\n9. Binary/Octal Converter\n10.Binary/Hexadecimal Converter\n11.Decimal/Octal Converter\n12.Decimal/Hexadecimal Converter\n13.Octal/Hexadecimal Converter\n14.RGB/Hex Converter\n15.Unit Converters\n`);
   while(wishTocompute.toUpperCase()==="YES"){
     driver_function(userInput,wishTocompute);
@@ -260,7 +260,7 @@ function utilityConverter(wishTocompute){
   thankYou();
 }
 let wishTocompute = "yes";
-utilityConverter(wishTocompute);
+utility_Converter(wishTocompute);
 
      
       
